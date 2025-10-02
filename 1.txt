@@ -2,3 +2,6 @@ git init AdventurePrikaztsikov
 git config --username "Roman Prikaztsikov"
 git config user.email "567prik@gmail.com"
 git config --global --list
+git remote add origin https://github.com/RomanPrikaztsikov/andmebaasGIT.git
+git branch -M main
+git push -u origin main
