@@ -1,0 +1,4 @@
+git init AdventurePrikaztsikov
+git config --username "Roman Prikaztsikov"
+git config user.email "567prik@gmail.com"
+git config --global --list
