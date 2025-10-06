@@ -44,3 +44,12 @@ as
 begin
 Return(Select FirstName from DimEmployees Where EmployeeKey=@Id)
 End
+
+--alter SchemaBinding
+Alter Function fn_GetEmployeeNameByID(@Id int)
+Returns nvarchar(20)
+With SchemaBinding
+as
+begin
+Return(Select FirstName from DimEmployees Where EmployeeKey=@Id)
+End
