@@ -81,4 +81,5 @@ begin
     select * from #PersonDetails;
 end;
 
+Create Table ##EmployeeDetails(Id int, Name nvarchar(20))
 
