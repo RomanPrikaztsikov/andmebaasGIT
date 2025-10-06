@@ -10,7 +10,7 @@ from dbo.DimEmployee);
 
 select * from fn_ILTVF_GetEmployees();
 
---√ïpilane teeb p√§ringu ja n√§itab koodi kirja ning tulemust pildi kujul.
+--’pilane teeb p‰ringu ja n‰itab koodi kirja ning tulemust pildi kujul.
 Create Function fn_MSTVF_GetEmployees()
 
 Returns @Table Table (EmployeeKey int,FirstName varchar(20), DOB Date)
