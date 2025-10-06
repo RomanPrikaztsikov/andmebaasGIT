@@ -33,5 +33,14 @@ Create function fn_GetEmployeeNameByID(@Id int)
 Returns nvarchar(20)
 as
 begin
-Return (Select FirstName from DimEmployees Where EmployeeKey=@Id
+Return (Select FirstName from DimEmployees Where Id=@Id
+End
+
+--alter 
+Alter Function fn_GetEmployeeNameByID(@Id int)
+Returns nvarchar(20)
+With Encryption
+as
+begin
+Return(Select FirstName from DimEmployees Where EmployeeKey=@Id)
 End
