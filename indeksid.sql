@@ -31,3 +31,16 @@ UNIQUE NONCLUSTERED (DepartmentName)
 CREATE UNIQUE INDEX IX_DimEmployee_StartDate_EmployeeKey
 ON DimEmployee(StartDate, EmployeeKey)
 WITH IGNORE_DUP_KEY
+
+
+Select * from DimEmployee order by BaseRate
+
+--kahanevas järjekorras
+Select * from DimEmployee order by BaseRate Desc
+
+--Grupeerib töötajad põhipalga alusel kokku.
+Select BaseRate, count(BaseRate) as Total
+from DimEmployee
+Group by BaseRate
+
+
