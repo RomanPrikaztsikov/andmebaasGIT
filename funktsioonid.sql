@@ -27,3 +27,11 @@ select * from fn_ILTVF_GetEmployees()
 select * from fn_MSTVF_GetEmployees()
 
 Update fn_ILTVF_GetEmployees()set FirstName="Sam1" Where id=1
+
+--employeename
+Create function fn_GetEmployeeNameByID(@Id int)
+Returns nvarchar(20)
+as
+begin
+Return (Select FirstName from DimEmployees Where EmployeeKey=@Id
+End
