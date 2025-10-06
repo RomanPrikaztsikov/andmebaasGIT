@@ -53,3 +53,14 @@ as
 begin
 Return(Select FirstName from DimEmployees Where EmployeeKey=@Id)
 End
+
+--Temporary Tabelid
+Create Table #PersonDetails(Id int, Name nvarchar(20))
+
+Insert into #PersonDetails Values(1,'Roman')
+Insert into #PersonDetails Values(2,'Boris')
+Insert into #PersonDetails Values(3,'Anatoly')
+
+Select * from #PersonDetails
+
+drop table #PersonDetails
