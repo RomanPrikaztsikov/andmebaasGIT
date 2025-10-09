@@ -34,3 +34,12 @@ as
 begin
 print 'you renamed it'
 end
+
+create trigger tr_DatabaseScopeTrigger
+on database
+for create_table, ater_table, drop_table
+as
+begin
+rollback
+print 'you cant create modify delete a table in this database'
+end
