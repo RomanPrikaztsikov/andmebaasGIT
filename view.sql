@@ -44,3 +44,17 @@ on DimEmployee.departmentname = dimdepartmentgroup.departmentgroupname
 Group by departmentname
 
 select * from vWEmployeesCountByDepartment
+
+
+create view vWEmployeesDataExceptSalary
+as
+select employeekey, FirstName, Gender, salesterritorykey
+from DimEmployee
+
+select * from vWEmployeesDataExceptSalary
+
+update vWEmployeesDataExceptSalary
+Set FirstName='Roman' where employeekey = 2
+
+delete from vWEmployeesDataExceptSalary where employeekey = 2
+insert into vWEmployeesDataExceptSalary values (2, 'Roman', 'Male', 2)
