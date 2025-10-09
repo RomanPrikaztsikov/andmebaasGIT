@@ -53,3 +53,10 @@ begin
 rollback
 print 'you cant create modify delete a table on the server at all'
 end
+
+
+disable trigger tr_ServerScopeTrigger on all server
+
+enable trigger tr_ServerScopeTrigger on all server
+
+droptrigger tr_ServerScopeTrigger on all server
