@@ -24,3 +24,13 @@ begin
 rollback
 print 'You cannot create delete or modify a table'
 end
+
+disable trigger trMyFirstTrigger on database
+
+create trigger trMyFirstTrigger
+on database
+for RENAME
+as
+begin
+print 'you renamed it'
+end
