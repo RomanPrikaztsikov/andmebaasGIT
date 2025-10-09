@@ -14,3 +14,13 @@ on dimemployee.departmentname = dimdepartmentgroup.departmentgroupname;
 select * from vwemployeesbydepartment;
 
 select * from DimEmployee
+
+create view vWITDepartment_Employees
+as
+select EmployeeKey, FirstName, BaseRate, Gender, departmentname
+from DimEmployee
+join DimDepartmentGroup
+on DimEmployee.departmentname = dimdepartmentgroup.departmentgroupname
+where dimdepartmentgroup.departmentgroupname = 'Marketing';
+
+select * from vWITDepartment_Employees
