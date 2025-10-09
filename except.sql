@@ -65,3 +65,27 @@ except select id, name, gender, salary
 from tblEmployees
 where salary >=60000
 order by name
+
+
+select id, name, gender from tableA
+except
+select id, name, gender from tableB
+
+select id, name, gender from tableA
+where id not in (select id from tableB)
+
+insert into tableA values (1, 'Roman', 'Male')
+
+select id, name, gender from tableA
+except 
+select id, name, gender from tableB
+
+select id, name, gender from tableA
+where id not in (select id from tableB)
+
+select id, name, gender from tableA
+except
+select id, name from tableB
+
+select id, name, gender from tableA
+where id not in (select id, name from tableB)
