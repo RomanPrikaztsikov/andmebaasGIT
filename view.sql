@@ -24,3 +24,23 @@ on DimEmployee.departmentname = dimdepartmentgroup.departmentgroupname
 where dimdepartmentgroup.departmentgroupname = 'Marketing';
 
 select * from vWITDepartment_Employees
+
+
+create view vWEmployeesNonConfidentialData
+as
+select EmployeeKey, FirstName, Gender, departmentname
+from DimEmployee
+join dimdepartmentgroup
+on DimEmployee.departmentname = dimdepartmentgroup.departmentgroupname
+
+select * from vWEmployeesNonConfidentialData
+
+create view vWEmployeesCountByDepartment
+as
+select departmentname, count(employeekey) as TotalEmployees
+from DimEmployee
+join Dimdepartmentgroup
+on DimEmployee.departmentname = dimdepartmentgroup.departmentgroupname
+Group by departmentname
+
+select * from vWEmployeesCountByDepartment
