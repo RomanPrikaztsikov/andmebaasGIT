@@ -44,6 +44,7 @@ on DimEmployee.departmentname = dimdepartmentgroup.departmentgroupname
 Group by departmentname
 
 select * from vWEmployeesCountByDepartment
+<<<<<<< HEAD
 
 
 create view vWEmployeesDataExceptSalary
@@ -71,3 +72,5 @@ select * from vwEmployeeDetailsByDepartment
 
 update vwEmployeeDetailsByDepartment
 set departmentname ='Marketing' where FirstName='Mark'
+=======
+>>>>>>> d8f7fb5 (views tehtud)
