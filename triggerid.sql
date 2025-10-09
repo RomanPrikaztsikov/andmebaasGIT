@@ -43,3 +43,13 @@ begin
 rollback
 print 'you cant create modify delete a table in this database'
 end
+
+
+create trigger tr_ServerScopeTrigger
+on all server
+for create_table, alter_table, drop_table
+as
+begin
+rollback
+print 'you cant create modify delete a table on the server at all'
+end
