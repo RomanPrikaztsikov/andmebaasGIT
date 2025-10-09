@@ -27,3 +27,41 @@ INSERT INTO TableB (Id, Name, Gender) VALUES
     (7, 'Rebeka', 'Female'),
     (8, 'Jordan', 'Male');
 GO
+
+
+select id, name, gender
+from tableA
+except
+select id, name, gender
+from tableB
+
+CREATE TABLE tblEmployees
+(
+    Id INT IDENTITY PRIMARY KEY,
+    Name NVARCHAR(100),
+    Gender NVARCHAR(10),
+    Salary INT
+);
+GO
+
+INSERT INTO tblEmployees (Name, Gender, Salary) VALUES
+    ('Mark', 'Male', 52000),
+    ('Mary', 'Female', 55000),
+    ('Steve', 'Male', 45000),
+    ('John', 'Male', 40000),
+    ('Sara', 'Female', 48000),
+    ('Pam', 'Female', 60000),
+    ('Tom', 'Male', 58000),
+    ('George', 'Male', 65000),
+    ('Tina', 'Female', 67000),
+    ('Ben', 'Male', 80000);
+GO
+
+
+select id, name, gender, salary
+from tblEmployees
+where salary >=50000
+except select id, name, gender, salary
+from tblEmployees
+where salary >=60000
+order by name
