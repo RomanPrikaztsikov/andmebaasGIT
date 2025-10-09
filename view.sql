@@ -58,3 +58,16 @@ Set FirstName='Roman' where employeekey = 2
 
 delete from vWEmployeesDataExceptSalary where employeekey = 2
 insert into vWEmployeesDataExceptSalary values (2, 'Roman', 'Male', 2)
+
+
+create view vwEmployeeDetailsByDepartment
+as
+select employeekey, FirstName, BaseRate, Gender, departmentname
+from dimemployee
+join dimdepartmentgroup
+on DimEmployee.departmentname = dimdepartmentgroup.departmentgroupname
+
+select * from vwEmployeeDetailsByDepartment
+
+update vwEmployeeDetailsByDepartment
+set departmentname ='Marketing' where FirstName='Mark'
